@@ -7,10 +7,12 @@ for i in texto.readlines():
         if len(j) > filas:
             filas = len(j)
 texto.seek(0)
-for i in texto.readlines():
-    print('-' * (filas * columnas + ((columnas - 1) * 3) + 2 * 2))
-    for k in i.split(','):
-        print('| {:^{filas}} '.format (k.strip(), filas=filas), end='')
+
+for i, v in enumerate(texto.readlines()):
+    if i == 0 or i == 1:
+        print('-' * (filas * columnas + ((columnas - 1) * 3) + 2 * 2))
+    for k in v.split(','):
+        print('| {:^{filas}} '.format(k.strip(), filas=filas), end='')
     print('|')
 
 print('-' * (filas * columnas + ((columnas - 1) * 3) + 2 * 2))
