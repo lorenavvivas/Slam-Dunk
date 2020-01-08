@@ -11,7 +11,7 @@ with open('estadisticas_partidos.csv') as csvfile:
             score_2 = 'Unknown'
         if i == 0:
             print('-' * 65)
-        if v['Team 1'] == v['Winner']:
+        if v['Team 1'] == v['Winner'][:-8]:
             print('|{:^15}|{:^15}|{:^15}|{:^15}|'.format(v['Team 1'], score_1, v['Team 2'], score_2))
         else:
             print('|{:^15}|{:^15}|{:^15}|{:^15}|'.format(v['Team 1'], score_2, v['Team 2'], score_1))
