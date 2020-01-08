@@ -9,9 +9,12 @@ with open('estadisticas_partidos.csv') as csvfile:
         except ValueError as e:
             score_1 = 'Unknown'
             score_2 = 'Unknown'
-
         if i == 0:
             print('-' * 65)
-        print('|{:^15}|{:^15}|{:^15}|{:^15}|'.format(v['Team 1'], score_1, v['Team 2'], score_2))
+        if v['Team 1'] == v['Winner']:
+            print('|{:^15}|{:^15}|{:^15}|{:^15}|'.format(v['Team 1'], score_1, v['Team 2'], score_2))
+        else:
+            print('|{:^15}|{:^15}|{:^15}|{:^15}|'.format(v['Team 1'], score_2, v['Team 2'], score_1))
     print('-' * 65)
+
 
